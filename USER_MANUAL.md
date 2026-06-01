@@ -47,10 +47,9 @@ SUDARSHAN AI features fully automated, single-click setup scripts for all platfo
 4. Once completed, press any key to close the window.
 
 ### 🍎 macOS Setup
-1. Unzip the downloaded `SUDARSHAN AI` folder.
-2. Double-click the **`Install_SUDARSHAN.command`** file.
-3. A Terminal window will open automatically, verify your dependencies, build a secure Python virtual environment (`.venv`), install the packages, and copy the model weights.
-4. Once completed, close the Terminal.
+1. Double-click the downloaded **`SUDARSHAN_AI_Mac_v1.0.dmg`** file to mount the disk image.
+2. A beautiful, glassmorphic installation window will open. Simply **drag the SUDARSHAN AI icon and drop it into your Applications folder** shortcut on the right.
+3. Eject the disk image and open `/Applications/SUDARSHAN AI` to launch the app!
 
 ### 🐧 Linux Setup
 1. Open a Terminal inside the unzipped `SUDARSHAN AI` folder.
@@ -65,13 +64,11 @@ SUDARSHAN AI features fully automated, single-click setup scripts for all platfo
 
 ## 3. How to Launch the Application
 
-Once installation is complete, running the GUI requires only a simple double-click:
+Once installation is complete, running the GUI is incredibly straightforward:
 
 * **Windows**: Double-click **`Launch_SUDARSHAN.bat`** in the application folder.
-* **macOS**: Double-click **`Launch_SUDARSHAN.command`** in the application folder.
+* **macOS**: Open **`SUDARSHAN AI`** from your Applications folder (or via Launchpad/Spotlight). On first launch, it will automatically set up the virtual environment in the background with a graphical progress window, then launch the app. Subsequent launches will start the app directly in under a second!
 * **Linux**: Run **`./launch_linux.sh`** from your Terminal.
-
-*Note: Keep the terminal window that opens in the background alive; it shows runtime logging and debug info while you use the app.*
 
 ---
 
@@ -125,12 +122,11 @@ Window-locked monitoring designed for HR interviews or live video calls (e.g., G
 #### Q: The installer opens and immediately closes or prints an error on Windows.
 **A:** This is usually because Python is either not installed, or you forgot to check the "Add python.exe to PATH" option during Python installation. Re-run the Python setup from [python.org](https://www.python.org), choose "Modify", and make sure the PATH checkmark is checked.
 
-#### Q: macOS blocks "Launch_SUDARSHAN.command" stating it is from an unidentified developer.
-**A:** This is macOS Gatekeeper security behavior for downloaded scripts. To allow it:
-1. Open your Mac's **System Settings > Privacy & Security**.
-2. Scroll down to find the section about "Launch_SUDARSHAN.command was blocked".
-3. Click **"Open Anyway"** and enter your password. You will only need to do this once.
-*(Alternatively, open Terminal in the folder and run: `chmod +x Launch_SUDARSHAN.command`)*
+#### Q: macOS blocks "SUDARSHAN AI" stating it is from an unidentified developer.
+**A:** This is standard macOS Gatekeeper security behavior for unsigned apps. To bypass this seamlessly without any terminal commands:
+1. Locate **SUDARSHAN AI** in your **Applications** folder.
+2. **Right-click (or Control-click)** the application icon, and click **Open** from the context menu.
+3. A confirmation dialog will appear. Click **Open** again. You will only need to do this once, and the application will launch normally on all subsequent double-clicks.
 
 #### Q: Live webcam displays a "Could not open webcam" error.
 **A:** Make sure no other application (like Zoom, MS Teams, or Skype) is currently using your webcam, as operating systems only allow one program to capture the camera feed at a time.

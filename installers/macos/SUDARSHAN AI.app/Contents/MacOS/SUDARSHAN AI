@@ -1,0 +1,22 @@
+#!/bin/bash
+# ==============================================================================
+# SUDARSHAN AI - macOS App Bundle Runner
+# ==============================================================================
+# This script is the entry point invoked by macOS Finder. It sets the working
+# directory to the bundle's Resources folder, finds python3, and runs the
+# glassmorphic bootstrap manager.
+# ==============================================================================
+
+# Get the absolute path to the bundle's Resources folder
+DIR="$(cd "$(dirname "$0")/../Resources" && pwd)"
+cd "$DIR"
+
+# Dynamic python3 lookup for maximum hardware and user context compatibility
+if command -v python3 &> /dev/null; then
+    PYTHON_CMD="python3"
+else
+    PYTHON_CMD="/usr/bin/python3"
+fi
+
+# Run the glassmorphic Python setup/launch manager
+$PYTHON_CMD bootstrap_mac.py

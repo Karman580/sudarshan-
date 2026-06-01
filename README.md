@@ -51,9 +51,9 @@ Users do not need to clone the repository or use terminal commands. They simply 
 3. Double-click **`Launch_SUDARSHAN.bat`** to start the app.
 
 ### 🍎 macOS Setup
-1. Download **`SUDARSHAN_AI_Mac_v1.0.zip`** and extract it.
-2. Double-click **`Install_SUDARSHAN.command`** to run the setup Terminal wizard.
-3. Double-click **`Launch_SUDARSHAN.command`** to start the app.
+1. Download **`SUDARSHAN_AI_Mac_v1.0.dmg`** and double-click to mount it.
+2. Drag **SUDARSHAN AI.app** to your **Applications** folder shortcut in the branded installer window.
+3. Open **SUDARSHAN AI** from Applications. It will perform automatic first-launch background setup and open the app.
 
 ### 🐧 Linux Setup
 1. Download **`SUDARSHAN_AI_Linux_v1.0.zip`** and extract it.
@@ -80,7 +80,7 @@ python3 package_releases.py --version v1.0
 2. **Stages packages**: Creates isolated staging folders for Windows, macOS, and Linux, mapping installer/launcher files to the root level.
 3. **Compresses release ZIPs**: Automatically generates versioned ZIP artifacts in the `releases/` folder:
    * `releases/SUDARSHAN_AI_Windows_v1.0.zip`
-   * `releases/SUDARSHAN_AI_Mac_v1.0.zip`
+   * `releases/SUDARSHAN_AI_Mac_v1.0.dmg`
    * `releases/SUDARSHAN_AI_Linux_v1.0.zip`
 4. **Calculates Checksums**: Computes **SHA-256 hashes** for secure verification.
 5. **Release Notes**: Automatically generates `releases/RELEASE_NOTES_v1.0.md` detailing changes and checksum matrices.

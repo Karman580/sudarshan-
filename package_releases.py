@@ -18,6 +18,7 @@ import shutil
 import zipfile
 import hashlib
 import argparse
+import subprocess
 from datetime import datetime
 
 # ==============================================================================
@@ -36,8 +37,11 @@ CRITICAL_PATHS = [
     "verify_timm.py",
     "installers/windows/Install_SUDARSHAN.bat",
     "installers/windows/Launch_SUDARSHAN.bat",
-    "installers/macos/Install_SUDARSHAN.command",
-    "installers/macos/Launch_SUDARSHAN.command",
+    "installers/macos/SUDARSHAN AI.app/Contents/Info.plist",
+    "installers/macos/SUDARSHAN AI.app/Contents/PkgInfo",
+    "installers/macos/SUDARSHAN AI.app/Contents/MacOS/SUDARSHAN AI",
+    "installers/macos/bootstrap_mac.py",
+    "installers/macos/create_dmg.sh",
     "installers/linux/install_linux.sh",
     "installers/linux/launch_linux.sh",
 ]
@@ -88,62 +92,128 @@ def zip_dir(src_dir, zip_filepath):
 # MAIN BUNDLING FUNCTION
 # ==============================================================================
 def build_package(os_name, version):
-    print(f"\n[BUILD] Assembling bundle for platform: {os_name.upper()} ({version})")
-    
-    os.makedirs(RELEASE_DIR, exist_ok=True)
-    staging_dir = os.path.join(RELEASE_DIR, f"staging_{os_name}")
-    
-    if os.path.exists(staging_dir):
-        shutil.rmtree(staging_dir)
-    os.makedirs(staging_dir)
-    
-    # 1. Copy Shared Directories
-    for folder in ["src", "gui", "models", "assets"]:
-        src_path = os.path.join(ROOT_DIR, folder)
-        dest_path = os.path.join(staging_dir, folder)
-        # Avoid copying system caches or duplicate test virtual environments
-        shutil.copytree(src_path, dest_path, ignore=shutil.ignore_patterns(
-            "__pycache__", "*.pyc", "*.pyo", ".venv", "venv", ".git", ".DS_Store"
-        ))
+    if os_name == "macos":
+        print(f"\n[BUILD] Assembling native DMG bundle for platform: MACOS ({version})")
         
-    # 2. Copy Shared Config files
-    shutil.copy2(os.path.join(ROOT_DIR, "requirements.txt"), staging_dir)
-    shutil.copy2(os.path.join(ROOT_DIR, "USER_MANUAL.md"), staging_dir)
-    shutil.copy2(os.path.join(ROOT_DIR, "verify_timm.py"), staging_dir)
-    
-    # 3. Copy OS-Specific Installers and Launchers (placed at the root of staging)
-    installers_src_dir = os.path.join(ROOT_DIR, "installers", os_name)
-    for file in os.listdir(installers_src_dir):
-        src_file = os.path.join(installers_src_dir, file)
-        if os.path.isfile(src_file):
-            shutil.copy2(src_file, staging_dir)
+        os.makedirs(RELEASE_DIR, exist_ok=True)
+        staging_dir = os.path.join(RELEASE_DIR, "staging_macos")
+        
+        if os.path.exists(staging_dir):
+            shutil.rmtree(staging_dir)
+        os.makedirs(staging_dir)
+        
+        # 1. Copy the App Bundle template
+        app_template_src = os.path.join(ROOT_DIR, "installers", "macos", "SUDARSHAN AI.app")
+        staged_app_path = os.path.join(staging_dir, "SUDARSHAN AI.app")
+        print(f"Staging App Bundle to: {staged_app_path}")
+        shutil.copytree(app_template_src, staged_app_path)
+        
+        # Resolve target resources folder
+        resources_dir = os.path.join(staged_app_path, "Contents", "Resources")
+        os.makedirs(resources_dir, exist_ok=True)
+        
+        # 2. Copy Shared Code and weight directories to Resources
+        for folder in ["src", "gui", "models", "assets"]:
+            src_path = os.path.join(ROOT_DIR, folder)
+            dest_path = os.path.join(resources_dir, folder)
+            shutil.copytree(src_path, dest_path, ignore=shutil.ignore_patterns(
+                "__pycache__", "*.pyc", "*.pyo", ".venv", "venv", ".git", ".DS_Store"
+            ))
             
-    # 4. Zip Staging Directory
-    zip_filename = f"SUDARSHAN_AI_{os_name.capitalize()}_{version}.zip"
-    zip_filepath = os.path.join(RELEASE_DIR, zip_filename)
-    
-    if os.path.exists(zip_filepath):
-        os.remove(zip_filepath)
+        # 3. Copy Shared Configuration and test files to Resources
+        shutil.copy2(os.path.join(ROOT_DIR, "requirements.txt"), resources_dir)
+        shutil.copy2(os.path.join(ROOT_DIR, "USER_MANUAL.md"), resources_dir)
+        shutil.copy2(os.path.join(ROOT_DIR, "verify_timm.py"), resources_dir)
+        shutil.copy2(os.path.join(ROOT_DIR, "installers", "macos", "bootstrap_mac.py"), resources_dir)
         
-    print(f"Compressing files into release zip: {zip_filename}...")
-    zip_dir(staging_dir, zip_filepath)
-    
-    # Calculate file metrics
-    size_mb = os.path.getsize(zip_filepath) / (1024 * 1024)
-    checksum = get_sha256(zip_filepath)
-    
-    # 5. Clean staging directory
-    shutil.rmtree(staging_dir)
-    
-    print(f"[SUCCESS] Packaged: {zip_filename}")
-    print(f"  Size: {size_mb:.2f} MB")
-    print(f"  SHA-256 Checksum: {checksum}")
-    
-    return {
-        "filename": zip_filename,
-        "size": f"{size_mb:.2f} MB",
-        "sha256": checksum
-    }
+        # 4. Ensure launcher script is executable
+        launcher_path = os.path.join(staged_app_path, "Contents", "MacOS", "SUDARSHAN AI")
+        os.chmod(launcher_path, 0o755)
+        
+        # 5. Build DMG package
+        dmg_filename = f"SUDARSHAN_AI_Mac_{version}.dmg"
+        dmg_filepath = os.path.join(RELEASE_DIR, dmg_filename)
+        
+        if os.path.exists(dmg_filepath):
+            os.remove(dmg_filepath)
+            
+        print("Invoking DMG compilation script (create_dmg.sh)...")
+        # Run create_dmg.sh
+        subprocess.run(["/bin/bash", os.path.join(ROOT_DIR, "installers", "macos", "create_dmg.sh"), staged_app_path, dmg_filepath], check=True)
+        
+        # Calculate file metrics
+        size_mb = os.path.getsize(dmg_filepath) / (1024 * 1024)
+        checksum = get_sha256(dmg_filepath)
+        
+        # Clean staging directory
+        shutil.rmtree(staging_dir)
+        
+        print(f"[SUCCESS] Packaged: {dmg_filename}")
+        print(f"  Size: {size_mb:.2f} MB")
+        print(f"  SHA-256 Checksum: {checksum}")
+        
+        return {
+            "filename": dmg_filename,
+            "size": f"{size_mb:.2f} MB",
+            "sha256": checksum
+        }
+    else:
+        print(f"\n[BUILD] Assembling bundle for platform: {os_name.upper()} ({version})")
+        
+        os.makedirs(RELEASE_DIR, exist_ok=True)
+        staging_dir = os.path.join(RELEASE_DIR, f"staging_{os_name}")
+        
+        if os.path.exists(staging_dir):
+            shutil.rmtree(staging_dir)
+        os.makedirs(staging_dir)
+        
+        # 1. Copy Shared Directories
+        for folder in ["src", "gui", "models", "assets"]:
+            src_path = os.path.join(ROOT_DIR, folder)
+            dest_path = os.path.join(staging_dir, folder)
+            # Avoid copying system caches or duplicate test virtual environments
+            shutil.copytree(src_path, dest_path, ignore=shutil.ignore_patterns(
+                "__pycache__", "*.pyc", "*.pyo", ".venv", "venv", ".git", ".DS_Store"
+            ))
+            
+        # 2. Copy Shared Config files
+        shutil.copy2(os.path.join(ROOT_DIR, "requirements.txt"), staging_dir)
+        shutil.copy2(os.path.join(ROOT_DIR, "USER_MANUAL.md"), staging_dir)
+        shutil.copy2(os.path.join(ROOT_DIR, "verify_timm.py"), staging_dir)
+        
+        # 3. Copy OS-Specific Installers and Launchers (placed at the root of staging)
+        installers_src_dir = os.path.join(ROOT_DIR, "installers", os_name)
+        for file in os.listdir(installers_src_dir):
+            src_file = os.path.join(installers_src_dir, file)
+            if os.path.isfile(src_file):
+                shutil.copy2(src_file, staging_dir)
+                
+        # 4. Zip Staging Directory
+        zip_filename = f"SUDARSHAN_AI_{os_name.capitalize()}_{version}.zip"
+        zip_filepath = os.path.join(RELEASE_DIR, zip_filename)
+        
+        if os.path.exists(zip_filepath):
+            os.remove(zip_filepath)
+            
+        print(f"Compressing files into release zip: {zip_filename}...")
+        zip_dir(staging_dir, zip_filepath)
+        
+        # Calculate file metrics
+        size_mb = os.path.getsize(zip_filepath) / (1024 * 1024)
+        checksum = get_sha256(zip_filepath)
+        
+        # 5. Clean staging directory
+        shutil.rmtree(staging_dir)
+        
+        print(f"[SUCCESS] Packaged: {zip_filename}")
+        print(f"  Size: {size_mb:.2f} MB")
+        print(f"  SHA-256 Checksum: {checksum}")
+        
+        return {
+            "filename": zip_filename,
+            "size": f"{size_mb:.2f} MB",
+            "sha256": checksum
+        }
 
 # ==============================================================================
 # PIPELINE ORCHESTRATION
