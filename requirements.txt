@@ -1,0 +1,43 @@
+# SUDARSHN — runtime dependencies
+# Install with:  pip install -r requirements.txt
+#
+# GPU note: install PyTorch with CUDA from https://pytorch.org/get-started/locally/
+# e.g.  pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+
+# ── Deep learning ──────────────────────────────────────────────────────────────
+torch>=2.0.0
+torchvision>=0.15.0
+timm>=0.9.0
+transformers>=4.30.0
+safetensors>=0.3.0
+einops>=0.7.0
+
+# ── Computer vision ────────────────────────────────────────────────────────────
+opencv-python>=4.8.0
+Pillow>=10.0.0
+facenet-pytorch>=2.5.0
+mtcnn>=0.1.1
+insightface>=0.7.3
+mediapipe>=0.10.0
+scikit-image>=0.21.0
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.9
+
+# ── Scientific / ML ────────────────────────────────────────────────────────────
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
+shap>=0.44.0
+
+# ── Audio / media ──────────────────────────────────────────────────────────────
+librosa>=0.10.0
+sounddevice>=0.4.6
+soundfile>=0.12.0
+
+# ── Utilities ──────────────────────────────────────────────────────────────────
+tqdm>=4.65.0
+requests>=2.31.0
+huggingface-hub>=0.16.0
+pydantic>=2.0.0
+PyYAML>=6.0
+psutil>=5.9.0

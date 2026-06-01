@@ -1,0 +1,19 @@
+include pyproject.toml
+include README.md
+include requirements.txt
+
+recursive-include gui/assets *
+recursive-include gui/lang *.json
+include gui/config.json
+
+recursive-include src *.py
+recursive-include src/aadhaar_verification *.py *.json *.yaml
+
+prune **/__pycache__
+prune **/*.pyc
+prune venv
+prune .git
+prune models
+prune archive
+prune temp
+prune outputs

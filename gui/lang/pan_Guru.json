@@ -1,0 +1,21 @@
+{
+    "ui_title": "ਸੁਦਰਸ਼ਨ-0.0 : ਸੱਚ ਨੂੰ ਸਾਹਮਣੇ ਲਿਆਉਣ ਦਾ ਸਾਧਨ",
+    "ui_subtitle": "ਸੋਸ਼ਲ ਮੀਡੀਆ ਵੀਡੀਓ ਸਮੱਗਰੀ ਲਈ ਡੀਪਫੇਕ ਪਛਾਣ ਅਤੇ ਵਿਆਖਿਆ",
+    "upload_video": "ਵੀਡੀਓ ਅੱਪਲੋਡ ਕਰੋ",
+    "upload_image": "ਚਿੱਤਰ ਅੱਪਲੋਡ ਕਰੋ",
+    "live_webcam": "ਲਾਈਵ ਵੈਬਕੈਮ",
+    "start_url_stream": "ਯੂਆਰਐਲ ਸਟ੍ਰੀਮ ਸ਼ੁਰੂ ਕਰੋ",
+    "open_meet": "ਮੀਟ ਖੋਲ੍ਹੋ",
+    "detect_meet_window": "ਮੀਟ ਵਿੰਡੋ ਦਾ ਪਤਾ ਲਗਾਓ",
+    "select_target_face": "ਨਿਸ਼ਾਨਾ ਚਿਹਰਾ ਚੁਣੋ",
+    "stop_stream": "ਸਟ੍ਰੀਮ ਰੋਕੋ",
+    "status": "ਸਥਿਤੀ",
+    "ready": "ਤਿਆਰ",
+    "input_video_display": "ਇਨਪੁਟ ਵੀਡੀਓ ਡਿਸਪਲੇ",
+    "explainability_output": "ਵਿਆਖਿਆਤਮਕ ਆਉਟਪੁੱਟ (ਹੀਟਮੈਪ)",
+    "explanation": "ਵਿਆਖਿਆ",
+    "confidence": "ਵਿਸ਼ਵਾਸ",
+    "controls": "ਕੰਟਰੋਲ",
+    "interview_monitor": "ਇੰਟਰਵਿਊ ਨਿਗਰਾਨ",
+    "live_stream_url": "ਲਾਈਵ ਸਟ੍ਰੀਮ ਯੂਆਰਐਲ"
+}

@@ -1,0 +1,572 @@
+[
+  {
+    "prediction": "real",
+    "confidence": 0.4729396402835846,
+    "top_anomalies": [
+      {
+        "type": "lips_lip_movement",
+        "value": 0.0,
+        "zscore": 1.6510137441458417,
+        "explanation": "Anomalous blood-flow/rPPG detected in the lips (lip_movement)"
+      }
+    ],
+    "suspect_regions": [
+      5
+    ],
+    "suspect_region_names": [
+      "lips"
+    ],
+    "temporal_explanation": {
+      "key_regions": [
+        "lips"
+      ],
+      "issues": [
+        "lips_lip_movement"
+      ]
+    },
+    "modal_importance": {
+      "spatial": 0.8,
+      "temporal": 0.15,
+      "frequency": 0.05
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is real (conf: 0.47). Anomalous blood-flow/rPPG detected in the lips (lip_movement) Suspect regions: lips. Modal importance (approx.): spatial=0.80, temporal=0.15, frequency=0.05. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/FR/ProcessedDataset/temporal_features_18feb/dfd_Real_01__exit_phone_room_temporal_mask.npy",
+      "spatial_mask": ""
+    },
+    "true_label": "real",
+    "video_id": "dfd_Real_01__exit_phone_room"
+  },
+  {
+    "prediction": "real",
+    "confidence": 0.4714037775993347,
+    "top_anomalies": [
+      {
+        "type": "eyes_blink_acceleration",
+        "value": 38.85232300884956,
+        "zscore": 3.690274982773095,
+        "explanation": "Anomalous blood-flow/rPPG detected in the eyes (blink_acceleration)"
+      },
+      {
+        "type": "right_cheek_peak_rppg",
+        "value": 13,
+        "zscore": 3.6666654444448517,
+        "explanation": "Anomalous blood-flow/rPPG detected in the right_cheek (peak_rppg)"
+      },
+      {
+        "type": "forehead_peak_rppg",
+        "value": 12,
+        "zscore": 3.3333322222225923,
+        "explanation": "Anomalous blood-flow/rPPG detected in the forehead (peak_rppg)"
+      },
+      {
+        "type": "lips_lip_movement",
+        "value": 19.05392672998643,
+        "zscore": 3.0070405700997633,
+        "explanation": "Anomalous blood-flow/rPPG detected in the lips (lip_movement)"
+      },
+      {
+        "type": "left_cheek_peak_rppg",
+        "value": 13,
+        "zscore": 2.749999312500172,
+        "explanation": "Anomalous blood-flow/rPPG detected in the left_cheek (peak_rppg)"
+      }
+    ],
+    "suspect_regions": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "suspect_region_names": [
+      "forehead",
+      "leftcheek",
+      "rightcheek",
+      "eyes",
+      "lips"
+    ],
+    "temporal_explanation": {
+      "key_regions": [
+        "forehead",
+        "leftcheek",
+        "rightcheek",
+        "eyes",
+        "lips"
+      ],
+      "issues": [
+        "eyes_blink_acceleration",
+        "right_cheek_peak_rppg",
+        "forehead_peak_rppg",
+        "lips_lip_movement",
+        "left_cheek_peak_rppg"
+      ]
+    },
+    "modal_importance": {
+      "spatial": 0.8,
+      "temporal": 0.15,
+      "frequency": 0.05
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is real (conf: 0.47). Anomalous blood-flow/rPPG detected in the eyes (blink_acceleration); Anomalous blood-flow/rPPG detected in the right_cheek (peak_rppg); Anomalous blood-flow/rPPG detected in the forehead (peak_rppg); Anomalous blood-flow/rPPG detected in the lips (lip_movement); Anomalous blood-flow/rPPG detected in the left_cheek (peak_rppg) Suspect regions: forehead, leftcheek, rightcheek, eyes, lips. Modal importance (approx.): spatial=0.80, temporal=0.15, frequency=0.05. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/FR/ProcessedDataset/temporal_features_18feb/dfd_Real_01__hugging_happy_temporal_mask.npy",
+      "spatial_mask": ""
+    },
+    "true_label": "real",
+    "video_id": "dfd_Real_01__hugging_happy"
+  },
+  {
+    "prediction": "real",
+    "confidence": 0.47298333048820496,
+    "top_anomalies": [
+      {
+        "type": "forehead_peak_rppg",
+        "value": 12,
+        "zscore": 3.3333322222225923,
+        "explanation": "Anomalous blood-flow/rPPG detected in the forehead (peak_rppg)"
+      }
+    ],
+    "suspect_regions": [
+      1
+    ],
+    "suspect_region_names": [
+      "forehead"
+    ],
+    "temporal_explanation": {
+      "key_regions": [
+        "forehead"
+      ],
+      "issues": [
+        "forehead_peak_rppg"
+      ]
+    },
+    "modal_importance": {
+      "spatial": 0.8,
+      "temporal": 0.15,
+      "frequency": 0.05
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is real (conf: 0.47). Anomalous blood-flow/rPPG detected in the forehead (peak_rppg) Suspect regions: forehead. Modal importance (approx.): spatial=0.80, temporal=0.15, frequency=0.05. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/FR/ProcessedDataset/temporal_features_18feb/dfd_Fake_01_02__hugging_happy__YVGY8LOK_temporal_mask.npy",
+      "spatial_mask": ""
+    },
+    "true_label": "fake",
+    "video_id": "dfd_Fake_01_02__hugging_happy__YVGY8LOK"
+  },
+  {
+    "prediction": "real",
+    "confidence": 0.45800647139549255,
+    "top_anomalies": [
+      {
+        "type": "eyes_blink_acceleration",
+        "value": 47.31838487972507,
+        "zscore": 4.74472481767097,
+        "explanation": "Anomalous blood-flow/rPPG detected in the eyes (blink_acceleration)"
+      },
+      {
+        "type": "right_cheek_peak_rppg",
+        "value": 14,
+        "zscore": 3.999998666667111,
+        "explanation": "Anomalous blood-flow/rPPG detected in the right_cheek (peak_rppg)"
+      },
+      {
+        "type": "lips_lip_movement",
+        "value": 14.043527148247168,
+        "zscore": 1.7821637392738499,
+        "explanation": "Anomalous blood-flow/rPPG detected in the lips (lip_movement)"
+      },
+      {
+        "type": "left_cheek_peak_rppg",
+        "value": 9,
+        "zscore": 1.7499995625001092,
+        "explanation": "Anomalous blood-flow/rPPG detected in the left_cheek (peak_rppg)"
+      }
+    ],
+    "suspect_regions": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "suspect_region_names": [
+      "leftcheek",
+      "rightcheek",
+      "eyes",
+      "lips"
+    ],
+    "temporal_explanation": {
+      "key_regions": [
+        "leftcheek",
+        "rightcheek",
+        "eyes",
+        "lips"
+      ],
+      "issues": [
+        "eyes_blink_acceleration",
+        "right_cheek_peak_rppg",
+        "lips_lip_movement",
+        "left_cheek_peak_rppg"
+      ]
+    },
+    "modal_importance": {
+      "spatial": 0.8,
+      "temporal": 0.15,
+      "frequency": 0.05
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is real (conf: 0.46). Anomalous blood-flow/rPPG detected in the eyes (blink_acceleration); Anomalous blood-flow/rPPG detected in the right_cheek (peak_rppg); Anomalous blood-flow/rPPG detected in the lips (lip_movement); Anomalous blood-flow/rPPG detected in the left_cheek (peak_rppg) Suspect regions: leftcheek, rightcheek, eyes, lips. Modal importance (approx.): spatial=0.80, temporal=0.15, frequency=0.05. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/FR/ProcessedDataset/temporal_features_18feb/dfd_Fake_01_02__outside_talking_still_laughing__YVGY8LOK_temporal_mask.npy",
+      "spatial_mask": ""
+    },
+    "true_label": "fake",
+    "video_id": "dfd_Fake_01_02__outside_talking_still_laughing__YVGY8LOK"
+  }
+]

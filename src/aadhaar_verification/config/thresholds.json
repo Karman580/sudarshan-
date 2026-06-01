@@ -1,0 +1,7 @@
+{
+    "ocr_disagreement_threshold": 0.2,
+    "qr_layout_alignment_threshold": 0.5,
+    "tamper_brightness_variance": 50,
+    "high_risk_threshold": 0.8,
+    "suspicious_threshold": 0.4
+}

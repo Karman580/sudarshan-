@@ -1,0 +1,656 @@
+[
+  {
+    "prediction": "fake",
+    "confidence": 0.9999608993530273,
+    "top_anomalies": [
+      {
+        "type": "eyes_blink_acceleration",
+        "value": 20.701614763552485,
+        "zscore": 2.3106917057747087,
+        "explanation": "Abnormal blink_acceleration in eyes (value: 20.702 vs normal 6.017)"
+      },
+      {
+        "type": "lips_lip_movement",
+        "value": 12.86667866138899,
+        "zscore": 2.1725261136490435,
+        "explanation": "Abnormal lip_movement in lips (value: 12.867 vs normal 4.078)"
+      },
+      {
+        "type": "left_cheek_peak_rppg",
+        "value": 13,
+        "zscore": 1.9999996666667221,
+        "explanation": "Abnormal peak_rppg in left_cheek (value: 13.000 vs normal 1.000)"
+      },
+      {
+        "type": "forehead_peak_rppg",
+        "value": 10,
+        "zscore": 1.799999640000072,
+        "explanation": "Abnormal peak_rppg in forehead (value: 10.000 vs normal 1.000)"
+      },
+      {
+        "type": "eyes_blink_rate",
+        "value": 0.2765957446808511,
+        "zscore": 1.5694455789063473,
+        "explanation": "Abnormal blink_rate in eyes (value: 0.277 vs normal 0.125)"
+      }
+    ],
+    "suspect_regions": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "suspect_region_names": [
+      "forehead",
+      "leftcheek",
+      "eyes",
+      "lips"
+    ],
+    "temporal_explanation": {
+      "key_regions": [
+        "forehead",
+        "leftcheek",
+        "eyes",
+        "lips"
+      ],
+      "issues": [
+        "eyes_blink_acceleration",
+        "lips_lip_movement",
+        "left_cheek_peak_rppg",
+        "forehead_peak_rppg",
+        "eyes_blink_rate"
+      ]
+    },
+    "spatial_explanation": {
+      "key_regions": [
+        "forehead",
+        "leftcheek",
+        "eyes",
+        "lips"
+      ]
+    },
+    "modal_importance": {
+      "frequency": 0.2905076967171153,
+      "temporal": 0.11226340560920085,
+      "spatial": 0.5972288976736839
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is fake (conf: 1.00). Abnormal blink_acceleration in eyes (value: 20.702 vs normal 6.017); Abnormal lip_movement in lips (value: 12.867 vs normal 4.078); Abnormal peak_rppg in left_cheek (value: 13.000 vs normal 1.000); Abnormal peak_rppg in forehead (value: 10.000 vs normal 1.000); Abnormal blink_rate in eyes (value: 0.277 vs normal 0.125) Suspect regions: forehead, leftcheek, eyes, lips. Modal importance (approx.): frequency=0.29, temporal=0.11, spatial=0.60. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/data/FF++/temporal_features_31oct/332_051_temporal_mask.npy",
+      "patchmap": "",
+      "spatial_mask": "/workspace/data/FF++/spatial_features_with_masks_10feb_union/332_051_mask.npy"
+    },
+    "true_label": "fake",
+    "video_id": "332_051",
+    "visual": {
+      "overlay_path": "/workspace/F_Net /F_Net_CNN/explanations/overlays/332_051_overlay.png"
+    },
+    "user_explanation": "The system considers this video very likely fake (confidence 1.00). It notices unusual patterns in these parts of the face: forehead, leftcheek, eyes, lips. The way blood-flow, blinks, or mouth movement change over time does not match what we usually see in real videos. These signals are typical of computer-generated or heavily edited faces, rather than natural recordings.",
+    "researcher_explanation": "Prediction: FAKE (softmax fake=1.0000). Suspicious regions: forehead, leftcheek, eyes, lips. Top temporal anomalies: Abnormal blink_acceleration in eyes (value: 20.702 vs normal 6.017); Abnormal lip_movement in lips (value: 12.867 vs normal 4.078); Abnormal peak_rppg in left_cheek (value: 13.000 vs normal 1.000); Abnormal peak_rppg in forehead (value: 10.000 vs normal 1.000); Abnormal blink_rate in eyes (value: 0.277 vs normal 0.125). Modal contributions (L2-based, normalized): frequency=0.29, temporal=0.11, spatial=0.60. CSP frequency emphasis at scales: 0, 1, 2 (lower scales = coarse structure, higher = fine details/edges)."
+  },
+  {
+    "prediction": "fake",
+    "confidence": 0.9999723434448242,
+    "top_anomalies": [
+      {
+        "type": "forehead_peak_rppg",
+        "value": 11,
+        "zscore": 1.99999960000008,
+        "explanation": "Abnormal peak_rppg in forehead (value: 11.000 vs normal 1.000)"
+      }
+    ],
+    "suspect_regions": [
+      1
+    ],
+    "suspect_region_names": [
+      "forehead"
+    ],
+    "temporal_explanation": {
+      "key_regions": [
+        "forehead"
+      ],
+      "issues": [
+        "forehead_peak_rppg"
+      ]
+    },
+    "spatial_explanation": {
+      "key_regions": [
+        "forehead"
+      ]
+    },
+    "modal_importance": {
+      "frequency": 0.2314847446336541,
+      "temporal": 0.3074714670690635,
+      "spatial": 0.4610437882972825
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is fake (conf: 1.00). Abnormal peak_rppg in forehead (value: 11.000 vs normal 1.000) Suspect regions: forehead. Modal importance (approx.): frequency=0.23, temporal=0.31, spatial=0.46. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/data/FF++/temporal_features_31oct/726_temporal_mask.npy",
+      "patchmap": "",
+      "spatial_mask": "/workspace/data/FF++/spatial_features_with_masks_10feb_union/726_mask.npy"
+    },
+    "true_label": "real",
+    "video_id": "726",
+    "visual": {
+      "overlay_path": "/workspace/F_Net /F_Net_CNN/explanations/overlays/726_overlay.png"
+    },
+    "user_explanation": "The system considers this video very likely fake (confidence 1.00). It notices unusual patterns in these parts of the face: forehead. The way blood-flow, blinks, or mouth movement change over time does not match what we usually see in real videos. These signals are typical of computer-generated or heavily edited faces, rather than natural recordings.",
+    "researcher_explanation": "Prediction: FAKE (softmax fake=1.0000). Suspicious regions: forehead. Top temporal anomalies: Abnormal peak_rppg in forehead (value: 11.000 vs normal 1.000). Modal contributions (L2-based, normalized): frequency=0.23, temporal=0.31, spatial=0.46. CSP frequency emphasis at scales: 0, 1, 2 (lower scales = coarse structure, higher = fine details/edges)."
+  },
+  {
+    "prediction": "fake",
+    "confidence": 0.9999887943267822,
+    "top_anomalies": [],
+    "suspect_regions": [],
+    "suspect_region_names": [],
+    "temporal_explanation": {},
+    "spatial_explanation": {},
+    "modal_importance": {
+      "frequency": 0.23155565460543978,
+      "temporal": 0.25464272754777195,
+      "spatial": 0.5138016178467882
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is fake (conf: 1.00). No strong temporal/spatial anomalies w.r.t. real baselines. Modal importance (approx.): frequency=0.23, temporal=0.25, spatial=0.51. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/data/FF++/temporal_features_31oct/294_292_temporal_mask.npy",
+      "patchmap": "",
+      "spatial_mask": "/workspace/data/FF++/spatial_features_with_masks_10feb_union/294_292_mask.npy"
+    },
+    "true_label": "fake",
+    "video_id": "294_292",
+    "visual": {
+      "overlay_path": "/workspace/F_Net /F_Net_CNN/explanations/overlays/294_292_overlay.png"
+    },
+    "user_explanation": "The system considers this video very likely fake (confidence 1.00). These signals are typical of computer-generated or heavily edited faces, rather than natural recordings.",
+    "researcher_explanation": "Prediction: FAKE (softmax fake=1.0000). Modal contributions (L2-based, normalized): frequency=0.23, temporal=0.25, spatial=0.51. CSP frequency emphasis at scales: 0, 1, 2 (lower scales = coarse structure, higher = fine details/edges)."
+  },
+  {
+    "prediction": "fake",
+    "confidence": 0.9999648332595825,
+    "top_anomalies": [],
+    "suspect_regions": [],
+    "suspect_region_names": [],
+    "temporal_explanation": {},
+    "spatial_explanation": {},
+    "modal_importance": {
+      "frequency": 0.2609501444866451,
+      "temporal": 0.21584874175001473,
+      "spatial": 0.5232011137633401
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is fake (conf: 1.00). No strong temporal/spatial anomalies w.r.t. real baselines. Modal importance (approx.): frequency=0.26, temporal=0.22, spatial=0.52. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/data/FF++/temporal_features_31oct/051_332_temporal_mask.npy",
+      "patchmap": "",
+      "spatial_mask": "/workspace/data/FF++/spatial_features_with_masks_10feb_union/051_332_mask.npy"
+    },
+    "true_label": "fake",
+    "video_id": "051_332",
+    "visual": {
+      "overlay_path": "/workspace/F_Net /F_Net_CNN/explanations/overlays/051_332_overlay.png"
+    },
+    "user_explanation": "The system considers this video very likely fake (confidence 1.00). These signals are typical of computer-generated or heavily edited faces, rather than natural recordings.",
+    "researcher_explanation": "Prediction: FAKE (softmax fake=1.0000). Modal contributions (L2-based, normalized): frequency=0.26, temporal=0.22, spatial=0.52. CSP frequency emphasis at scales: 0, 1, 2 (lower scales = coarse structure, higher = fine details/edges)."
+  },
+  {
+    "prediction": "fake",
+    "confidence": 0.9999866485595703,
+    "top_anomalies": [],
+    "suspect_regions": [],
+    "suspect_region_names": [],
+    "temporal_explanation": {},
+    "spatial_explanation": {},
+    "modal_importance": {
+      "frequency": 0.25307804298977504,
+      "temporal": 0.17959402699065255,
+      "spatial": 0.5673279300195725
+    },
+    "frequency_summary": {
+      "total_bands": 8,
+      "levels": 4,
+      "orientations": 2,
+      "channels_description": "channel 0: Magnitude (Normalized), channel 1: Phase (radians)",
+      "bands": {
+        "0": {
+          "scale": 0,
+          "orientation": 0
+        },
+        "1": {
+          "scale": 0,
+          "orientation": 1
+        },
+        "2": {
+          "scale": 1,
+          "orientation": 0
+        },
+        "3": {
+          "scale": 1,
+          "orientation": 1
+        },
+        "4": {
+          "scale": 2,
+          "orientation": 0
+        },
+        "5": {
+          "scale": 2,
+          "orientation": 1
+        },
+        "6": {
+          "scale": 3,
+          "orientation": 0
+        },
+        "7": {
+          "scale": 3,
+          "orientation": 1
+        }
+      },
+      "scale_importance": [
+        {
+          "scale": 0,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 1,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 2,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 3,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 4,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 5,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 6,
+          "raw_score": 0.0,
+          "importance": 0.0
+        },
+        {
+          "scale": 7,
+          "raw_score": 0.0,
+          "importance": 0.0
+        }
+      ],
+      "top_scales": [
+        0,
+        1,
+        2
+      ]
+    },
+    "summary": "Video is fake (conf: 1.00). No strong temporal/spatial anomalies w.r.t. real baselines. Modal importance (approx.): frequency=0.25, temporal=0.18, spatial=0.57. CSP uses 8 frequency bands (4 levels \u00d7 2 orientations). channel 0: Magnitude (Normalized), channel 1: Phase (radians) Highest CSP energy at scales: 0 (coarse structure), 1 (coarse structure), 2 (fine details/edges).",
+    "viz_paths": {
+      "mask": "/workspace/data/FF++/temporal_features_31oct/056_temporal_mask.npy",
+      "patchmap": "",
+      "spatial_mask": "/workspace/data/FF++/spatial_features_with_masks_10feb_union/056_mask.npy"
+    },
+    "true_label": "real",
+    "video_id": "056",
+    "visual": {
+      "overlay_path": "/workspace/F_Net /F_Net_CNN/explanations/overlays/056_overlay.png"
+    },
+    "user_explanation": "The system considers this video very likely fake (confidence 1.00). These signals are typical of computer-generated or heavily edited faces, rather than natural recordings.",
+    "researcher_explanation": "Prediction: FAKE (softmax fake=1.0000). Modal contributions (L2-based, normalized): frequency=0.25, temporal=0.18, spatial=0.57. CSP frequency emphasis at scales: 0, 1, 2 (lower scales = coarse structure, higher = fine details/edges)."
+  }
+]

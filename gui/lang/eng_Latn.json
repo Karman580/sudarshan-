@@ -1,0 +1,21 @@
+{
+    "ui_title": "SUDARSHAN-0.0 : A Tool to Reveal the Truth",
+    "ui_subtitle": "Deepfake Detection and Explanation for Social Media Video Content  (DSAI2025-CS-1012)",
+    "upload_video": "UPLOAD VIDEO",
+    "upload_image": "UPLOAD IMAGE",
+    "live_webcam": "LIVE WEBCAM",
+    "start_url_stream": "START URL STREAM",
+    "open_meet": "OPEN MEET",
+    "detect_meet_window": "DETECT MEET WINDOW",
+    "select_target_face": "SELECT TARGET FACE",
+    "stop_stream": "STOP STREAM",
+    "status": "Status",
+    "ready": "Ready",
+    "input_video_display": "Input Video Display",
+    "explainability_output": "Explainability Output (Heatmaps)",
+    "explanation": "Explanation",
+    "confidence": "Confidence",
+    "controls": "CONTROLS",
+    "interview_monitor": "Interview Monitor",
+    "live_stream_url": "Live Stream URL"
+}

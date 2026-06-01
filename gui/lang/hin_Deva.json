@@ -1,0 +1,21 @@
+{
+    "ui_title": "सुदर्शन-0.0 : सच को सामने लाने का उपकरण",
+    "ui_subtitle": "सोशल मीडिया वीडियो सामग्री के लिए डीपफेक पहचान और स्पष्टीकरण",
+    "upload_video": "वीडियो अपलोड करें",
+    "upload_image": "छवि अपलोड करें",
+    "live_webcam": "लाइव वेबकैम",
+    "start_url_stream": "यूआरएल स्ट्रीम शुरू करें",
+    "open_meet": "मीट खोलें",
+    "detect_meet_window": "मीट विंडो का पता लगाएं",
+    "select_target_face": "लक्ष्य चेहरा चुनें",
+    "stop_stream": "स्ट्रीम रोकें",
+    "status": "स्थिति",
+    "ready": "तैयार",
+    "input_video_display": "इनपुट वीडियो डिस्प्ले",
+    "explainability_output": "स्पष्टीकरण आउटपुट (हीटमैप)",
+    "explanation": "स्पष्टीकरण",
+    "confidence": "आत्मविश्वास",
+    "controls": "नियंत्रण",
+    "interview_monitor": "साक्षात्कार मॉनिटर",
+    "live_stream_url": "लाइव स्ट्रीम यूआरएल"
+}

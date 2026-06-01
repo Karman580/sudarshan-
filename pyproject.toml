@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sudarshn"
+version = "0.1.0"
+description = "SUDARSHN — Explainable Deepfake Detection with F-Net multi-modal CNN"
+authors = [
+    { name = "Thapar Institute of Engineering & Technology" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["deepfake", "detection", "face", "video", "AI", "explainability"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Video",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    # Core deep learning
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "timm>=0.9.0",
+    "transformers>=4.30.0",
+    "safetensors>=0.3.0",
+
+    # Computer vision
+    "opencv-python>=4.8.0",
+    "Pillow>=10.0.0",
+    "facenet-pytorch>=2.5.0",
+    "mtcnn>=0.1.1",
+    "insightface>=0.7.3",
+    "mediapipe>=0.10.0",
+    "scikit-image>=0.21.0",
+    "imageio>=2.31.0",
+    "imageio-ffmpeg>=0.4.9",
+
+    # Scientific / ML
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "scikit-learn>=1.3.0",
+    "shap>=0.44.0",
+    "einops>=0.7.0",
+
+    # Audio / media
+    "librosa>=0.10.0",
+    "sounddevice>=0.4.6",
+    "soundfile>=0.12.0",
+
+    # Utilities
+    "Pillow>=10.0.0",
+    "tqdm>=4.65.0",
+    "requests>=2.31.0",
+    "huggingface-hub>=0.16.0",
+    "pydantic>=2.0.0",
+    "PyYAML>=6.0",
+    "psutil>=5.9.0",
+]
+
+[project.optional-dependencies]
+gpu = [
+    "nvidia-cudnn-cu12",
+    "nvidia-cublas-cu12",
+]
+dev = [
+    "pytest>=8.0",
+    "black>=24.0",
+    "isort>=5.13",
+]
+
+[project.scripts]
+sudarshn = "gui.sudarshn_ui:main"
+
+[project.gui-scripts]
+sudarshn-gui = "gui.sudarshn_ui:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "gui*"]
+
+[tool.setuptools.package-data]
+"gui" = ["assets/*.png", "lang/*.json", "config.json", "cache.json"]
+"src" = ["**/*.py"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 100

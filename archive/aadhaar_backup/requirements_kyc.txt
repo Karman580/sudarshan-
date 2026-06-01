@@ -1,0 +1,33 @@
+# Aadhaar KYC System — Additional Dependencies
+# Install: pip install -r requirements_kyc.txt
+#
+# Note: These are in addition to the base project requirements.
+# Optional dependencies are marked — the system gracefully degrades
+# without them.
+
+# --- Core (required) ---
+opencv-python>=4.8
+numpy>=1.24
+pillow>=10.0
+
+# --- OCR ---
+easyocr>=1.7                # Primary OCR engine (recommended)
+# pytesseract              # Fallback — requires Tesseract binary installed
+
+# --- QR code ---
+pyzbar>=0.1.9               # QR detection & decoding
+xmltodict>=0.13             # Aadhaar Secure QR XML parsing
+
+# --- Face detection ---
+mediapipe>=0.10             # Primary face detector
+
+# --- Face matching (optional) ---
+deepface>=0.0.79            # Selfie vs card face comparison
+
+# --- AI-fake detection & YOLO (optional) ---
+torch>=2.0                  # Required for AI-fake classifier
+torchvision>=0.15
+ultralytics>=8.0            # YOLOv8 card region detector
+
+# --- Image analysis ---
+scikit-image>=0.21          # Block-wise ELA analysis utilities
