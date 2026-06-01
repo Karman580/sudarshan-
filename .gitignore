@@ -53,3 +53,6 @@ git_inspect_temp/
 
 # Exclude large training checkpoints (>50MB), but KEEP production weight files
 v2_balanced/checkpoints/*_full.pth
+
+# Build releases
+releases/

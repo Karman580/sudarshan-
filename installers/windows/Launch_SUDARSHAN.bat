@@ -6,7 +6,7 @@ if not exist ".venv" (
     echo [ERROR] Virtual environment (.venv) not found!
     echo It seems the software dependencies have not been installed yet.
     echo Please double-click the setup file to install everything first:
-    echo   --^> Install_SUDARSHAN.bat
+    echo   --> Install_SUDARSHAN.bat
     echo.
     pause
     exit /b 1

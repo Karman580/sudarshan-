@@ -10,6 +10,10 @@
 # Ensure working directory is always the script directory (handles double-clicks)
 cd "$(dirname "$0")"
 
+# Setup troubleshooting log file redirection
+LOG_FILE="install.log"
+exec > >(tee -i "$LOG_FILE") 2>&1
+
 # Text Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -22,7 +26,7 @@ clear
 echo -e "${CYAN}======================================================================${NC}"
 echo -e "${CYAN}                   SUDARSHAN AI - macOS Setup Wizard                  ${NC}"
 echo -e "${CYAN}======================================================================${NC}"
-echo -e "Starting system checks and installer..."
+echo -e "Starting system checks and installer... Logging to ${LOG_FILE}"
 echo ""
 
 # ------------------------------------------------------------------------------
@@ -137,7 +141,7 @@ echo -e "${GREEN}✓ System verification complete! System is fully functional!${
 echo ""
 
 # ------------------------------------------------------------------------------
-# FINALIZELAUNCHERS
+# FINALISE LAUNCHERS
 # ------------------------------------------------------------------------------
 chmod +x Launch_SUDARSHAN.command 2>/dev/null
 

@@ -10,6 +10,10 @@
 # Ensure working directory is always the script directory
 cd "$(dirname "$0")"
 
+# Setup troubleshooting log file redirection
+LOG_FILE="install.log"
+exec > >(tee -i "$LOG_FILE") 2>&1
+
 # Text Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -22,7 +26,7 @@ clear
 echo -e "${CYAN}======================================================================${NC}"
 echo -e "${CYAN}                   SUDARSHAN AI - Linux Setup Wizard                  ${NC}"
 echo -e "${CYAN}======================================================================${NC}"
-echo -e "Starting system checks and installer..."
+echo -e "Starting system checks and installer... Logging to ${LOG_FILE}"
 echo ""
 
 # ------------------------------------------------------------------------------
@@ -143,7 +147,7 @@ fi
 .venv/bin/python verify_timm.py
 if [ $? -ne 0 ]; then
     echo -e "${RED}[ERROR] System verification check failed!${NC}"
-    echo -e "There is a compilation or missing dependency issue."
+    echo -e "There is a compilation or runtime configuration issue."
     read -p "Press [Enter] to exit..."
     exit 1
 fi
